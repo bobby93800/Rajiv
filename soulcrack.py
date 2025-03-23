@@ -218,7 +218,7 @@ def handle_soul(message):
             soulking = int(command[2])  
             time = int(command[3])  
             if time > 181:
-                response = "Error: Time interval must be less than 80."
+                response = "Error: Time interval must be less than 400."
             else:
                 record_command_logs(user_id, '/soul_compiled', king, soulking, time)
                 log_command(user_id, king, soulking, time)
